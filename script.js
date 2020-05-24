@@ -28,7 +28,7 @@ function getRandomColor() {
 // função que define as 3 cores aleatorias quando a pagina é carregada
 function setRandomColors() {
   const guessColor = getRandomColor();
-  textoCor.innerHTML = guessColor; 
+  textoCor.innerHTML = guessColor;
   const setCor1 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
   cor1.style.backgroundColor = setCor1; // seta o style com o valor da variavel
   const setCor2 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
@@ -37,7 +37,10 @@ function setRandomColors() {
   cor3.style.backgroundColor = setCor3; // seta o style com o valor da variavel
   const setCor4 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
   cor4.style.backgroundColor = setCor4; // seta o style com o valor da variavel
-  
+  const setCor5 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
+  cor4.style.backgroundColor = setCor5; // seta o style com o valor da variavel
+  const setCor6 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
+  cor4.style.backgroundColor = setCor6; // seta o style com o valor da variavel
 }
 
-setRandomColors()
+setRandomColors();
