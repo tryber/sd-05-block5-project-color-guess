@@ -30,17 +30,17 @@ function setRandomColors() {
   const guessColor = getRandomColor();
   textoCor.innerHTML = guessColor;
   const setCor1 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
-  cor1.style.backgroundColor = setCor1; // seta o style com o valor da variavel
+  // cor1.style.backgroundColor = setCor1; // seta o style com o valor da variavel
   const setCor2 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
-  cor2.style.backgroundColor = setCor2; // seta o style com o valor da variavel
+  // cor2.style.backgroundColor = setCor2; // seta o style com o valor da variavel
   const setCor3 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
-  cor3.style.backgroundColor = setCor3; // seta o style com o valor da variavel
+  // cor3.style.backgroundColor = setCor3; // seta o style com o valor da variavel
   const setCor4 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
-  cor4.style.backgroundColor = setCor4; // seta o style com o valor da variavel
+  // cor4.style.backgroundColor = setCor4; // seta o style com o valor da variavel
   const setCor5 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
-  cor4.style.backgroundColor = setCor5; // seta o style com o valor da variavel
+  // cor4.style.backgroundColor = setCor5; // seta o style com o valor da variavel
   const setCor6 = `rgb${guessColor}`; // chama a função anterior e seta em uma variavel com a cor aleatoria
-  cor4.style.backgroundColor = setCor6; // seta o style com o valor da variavel
+  // cor4.style.backgroundColor = setCor6; // seta o style com o valor da variavel
 }
 
 setRandomColors();
