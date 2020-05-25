@@ -1,0 +1,25 @@
+body {
+  background-color: darkolivegreen;
+  margin: 0;
+}
+
+.container {
+  background-color: gainsboro;
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 64px auto;
+  padding-bottom: 32px;
+  width: 600px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.ball {
+  border-radius: 100%;
+  display: inline-block;
+  height: 64px;
+  margin: 5px;
+  width: 64px;
+}
