@@ -15,18 +15,16 @@ function selectRandomColor() {
   selectedColor.innerText = `(${String(c[0])}, ${String(c[1])}, ${String(c[2])})`;
   document.getElementById('answer').innerText = 'Escolha uma cor';
 }
-window.onload = function () {
-  colors = this.document.getElementById('colors');
-  selectedColor = this.document.getElementById('rgb-color');
-  function gamble(element) {
-    if (element.target.color === selectedColor.color) {
-      document.getElementById('answer').innerText = 'Acertou!';
-      score += 3;
-      document.getElementById('score').innerText = score;
-    } else {
-      document.getElementById('answer').innerText = 'Errou! Tente novamente!';
-    }
+function gamble(element) {
+  if (element.target.color === selectedColor.color) {
+    document.getElementById('answer').innerText = 'Acertou!';
+    score += 3;
+    document.getElementById('score').innerText = score;
+  } else {
+    document.getElementById('answer').innerText = 'Errou! Tente novamente!';
   }
+}
+function initColors() {
   while (colors.children.length < numColors) {
     const div = this.document.createElement('div');
     const child = colors.appendChild(div);
@@ -36,13 +34,18 @@ window.onload = function () {
     child.style.backgroundColor = `RGB(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
     child.addEventListener('click', gamble);
   }
-  selectRandomColor();
+}
+window.onload = function () {
+  colors = this.document.getElementById('colors');
+  selectedColor = this.document.getElementById('rgb-color');
+  this.initColors();
+  this.selectRandomColor();
   this.document.getElementById('reset-game').addEventListener('click', function () {
-    for (child of colors.children) {
+    for (let child of colors.children) {
       const newColor = createRandomColors();
       child.color = newColor;
       child.style.backgroundColor = `RGB(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
     }
     selectRandomColor();
-  })
+  });
 };
