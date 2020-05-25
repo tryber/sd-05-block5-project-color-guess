@@ -68,22 +68,23 @@ function pickColor() {
   corEscolhida = guessColor; // define a variavel que ira verificar a cor correta
 }
 
-function checkColor() {
-  target = event.target; // seta o target
-  if (target.style.backgroundColor === corEscolhida) {
-    answer.innerText = 'Acertou!';
-    score.innerText = parseInt(score.innerText) + 3;
-    resetGame()
-  } else {
-    answer.innerText = 'Errou! Tente novamente!';
-    score.innerText = parseInt(score.innerText) - 1;
-  }
-}
-
 function resetGame() {
   setRandomColors();
   pickColor();
 }
+
+function checkColor() {
+  target = event.target; // seta o target
+  if (target.style.backgroundColor === corEscolhida) {
+    answer.innerText = 'Acertou!';
+    score.innerText = parseInt(score.innerText, 10) + 3;
+    resetGame();
+  } else {
+    answer.innerText = 'Errou! Tente novamente!';
+    score.innerText = parseInt(score.innerText, 10) - 1;
+  }
+}
+
 // event listeners
 cor1.addEventListener('click', checkColor); // listener que verifica se a cor clickada é a correta
 cor2.addEventListener('click', checkColor); // listener que verifica se a cor clickada é a correta
