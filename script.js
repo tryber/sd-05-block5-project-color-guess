@@ -9,6 +9,7 @@ const cor6 = document.getElementById('box6');
 const balls = document.getElementById('ball-box').children;
 const answer = document.getElementById('answer');
 const reset = document.getElementById('reset');
+const score = document.getElementById('score');
 let corEscolhida = '';
 let target = '';
 // functions
@@ -71,8 +72,11 @@ function checkColor() {
   target = event.target; // seta o target
   if (target.style.backgroundColor === corEscolhida) {
     answer.innerText = 'Acertou!';
+    score.innerText = parseInt(score.innerText) + 3;
+    resetGame()
   } else {
     answer.innerText = 'Errou! Tente novamente!';
+    score.innerText = parseInt(score.innerText) - 1;
   }
 }
 
