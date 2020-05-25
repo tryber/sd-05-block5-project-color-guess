@@ -1,4 +1,5 @@
 const numColors = 6;
+let score = 0;
 let colors = [];
 let selectedColor = {};
 function createRandomColors() {
@@ -20,6 +21,8 @@ window.onload = function () {
   function gamble(element) {
     if (element.target.color === selectedColor.color) {
       document.getElementById('answer').innerText = 'Acertou!';
+      score += 3;
+      document.getElementById('score').innerText = score;
     } else {
       document.getElementById('answer').innerText = 'Errou! Tente novamente!';
     }
@@ -34,4 +37,12 @@ window.onload = function () {
     child.addEventListener('click', gamble);
   }
   selectRandomColor();
+  this.document.getElementById('reset-game').addEventListener('click', function () {
+    for (child of colors.children) {
+      const newColor = createRandomColors();
+      child.color = newColor;
+      child.style.backgroundColor = `RGB(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
+    }
+    selectRandomColor();
+  })
 };
