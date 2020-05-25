@@ -1,6 +1,6 @@
 body {
-  margin: 0;
   background-color: darkolivegreen;
+  margin: 0;
 }
 
 .container {
@@ -18,7 +18,7 @@ body {
 .ball {
   border-radius: 100%;
   display: inline-block;
-  margin: 5px;
   height: 64px;
+  margin: 5px;
   width: 64px;
 }
