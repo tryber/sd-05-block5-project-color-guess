@@ -1,4 +1,4 @@
-const numColors = 5;
+const numColors = 6;
 let colors = [];
 let selectedColor = {};
 function createRandomColors() {
