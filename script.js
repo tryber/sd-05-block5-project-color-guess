@@ -38,13 +38,13 @@ function initColors() {
 window.onload = function () {
   colors = this.document.getElementById('colors');
   selectedColor = this.document.getElementById('rgb-color');
-  this.initColors();
-  this.selectRandomColor();
+  initColors();
+  selectRandomColor();
   this.document.getElementById('reset-game').addEventListener('click', function () {
-    for (let child of colors.children) {
+    for (let i = 0; i<colors.children.length; i += 1) {
       const newColor = createRandomColors();
-      child.color = newColor;
-      child.style.backgroundColor = `RGB(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
+      colors.children[i].color = newColor;
+      colors.children[i].style.backgroundColor = `RGB(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
     }
     selectRandomColor();
   });
