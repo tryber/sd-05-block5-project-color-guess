@@ -41,7 +41,7 @@ window.onload = function () {
   initColors();
   selectRandomColor();
   this.document.getElementById('reset-game').addEventListener('click', function () {
-    for (let i = 0; i<colors.children.length; i += 1) {
+    for (let i = 0; i < colors.children.length; i += 1) {
       const newColor = createRandomColors();
       colors.children[i].color = newColor;
       colors.children[i].style.backgroundColor = `RGB(${newColor[0]}, ${newColor[1]}, ${newColor[2]})`;
