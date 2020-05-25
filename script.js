@@ -9,7 +9,7 @@ function createRandomColors() {
 }
 function selectRandomColor(){
   const size = colors.children.length;
-  const c = colors.children[Math.floor((Math.random()*size)-1)].color;
+  const c = colors.children[Math.floor(Math.random()*size)].color;
   selectedColor.color = c;
   selectedColor.innerText = '('+c[0]+', '+c[1]+', '+c[2]+')';
 }
