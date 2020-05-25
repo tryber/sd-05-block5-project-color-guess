@@ -8,6 +8,7 @@ const cor5 = document.getElementById('box5');
 const cor6 = document.getElementById('box6');
 const balls = document.getElementById('ball-box').children;
 const answer = document.getElementById('answer');
+const reset = document.getElementById('reset');
 let corEscolhida = '';
 let target = '';
 // functions
@@ -60,19 +61,24 @@ function pickColor() {
   const colorNumber = Math.floor(Math.random() * 6);
   // formula que retorna um valor aleatorio entre 0 e 5
   const guessColor = balls[colorNumber].style.backgroundColor; // define qual sera a cor da vez
-  // com o valor definido em colorNumber, pega a posição no array dos filhos da div que contem as cores
-  // e salva a cor do background
+  // com o valor definido em colorNumber, pega a posição no array dos filhos
+  // da div que contem as cores e salva a cor do background
   textoCor.innerHTML = guessColor; // denide o texto com a cor escolhida para aparecer na tela
   corEscolhida = guessColor; // define a variavel que ira verificar a cor correta
 }
 
 function checkColor() {
-  target = event.target; //seta o target
+  target = event.target; // seta o target
   if (target.style.backgroundColor === corEscolhida) {
     answer.innerText = 'Acertou!';
   } else {
     answer.innerText = 'Errou! Tente novamente!';
   }
+}
+
+function resetGame() {
+  setRandomColors();
+  pickColor();
 }
 // event listeners
 cor1.addEventListener('click', checkColor); // listener que verifica se a cor clickada é a correta
@@ -81,6 +87,6 @@ cor3.addEventListener('click', checkColor); // listener que verifica se a cor cl
 cor4.addEventListener('click', checkColor); // listener que verifica se a cor clickada é a correta
 cor5.addEventListener('click', checkColor); // listener que verifica se a cor clickada é a correta
 cor6.addEventListener('click', checkColor); // listener que verifica se a cor clickada é a correta
-
-setRandomColors(); //chama função que define as 6 cores iniciais
+reset.addEventListener('click', resetGame);
+setRandomColors(); // chama função que define as 6 cores iniciais
 pickColor(); // chama função que escolhe uma das cores para ser a cor da vez
