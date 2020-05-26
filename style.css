@@ -1,0 +1,31 @@
+#title,
+#rgb-color,
+#ball-content,
+#answer {
+  text-align: center;
+}
+
+.ball {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 30px;
+}
+
+#resetdiv {
+  text-align: center;
+}
+
+#reset-game {
+  border: 5px solid purple;
+  font-size: 1.5em;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+}
+
+#reset:hover {
+  border-color: red;
+}
