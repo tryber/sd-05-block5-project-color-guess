@@ -1,4 +1,7 @@
-#title, #rgb-color, #ball-content, #answer {
+#title,
+#rgb-color,
+#ball-content,
+#answer {
   text-align: center;
 }
 
@@ -7,7 +10,7 @@
   width: 100px;
   height: 100px;
   display: inline-block;
-  margin:30px;
+  margin: 30px;
 }
 
 #resetdiv {
