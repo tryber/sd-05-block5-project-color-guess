@@ -25,7 +25,7 @@ function certoOuErrado (event){
   if (targetColor === 'rgb'+rgbcolor.innerHTML) {
     answer.innerHTML = 'Acertou!'
     scoreCount += 3
-    scoreCountRef.innerHTML = scoreCount  
+    scoreCountRef.innerHTML =scoreCount  
   } else {
     answer.innerHTML = 'Errou! Tente novamente!'
   }
@@ -51,5 +51,5 @@ rgbcolor.innerHTML = ballColors[random].style.backgroundColor.replace('rgb', '')
 answer.innerHTML = 'Escolha uma cor'
 }
 
-const resetar = document.getElementById('reset');
+const resetar = document.getElementById('reset-game');
 resetar.addEventListener('click', resetCores);
