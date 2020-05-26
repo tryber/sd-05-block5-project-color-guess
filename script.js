@@ -4,6 +4,9 @@ const ballColors = document.getElementsByClassName('ball')
 const scoreCountRef = document.getElementById('score');
 //INICIA O JOGO
 window.onload = resetCores()
+window.onload = function () {
+  scoreCountRef.innerHTML = 0
+}
 
 //FUNÇAO QUE GERA AS CORES
 function geraRGB () {
@@ -22,7 +25,7 @@ function certoOuErrado (event){
   if (targetColor === 'rgb'+rgbcolor.innerHTML) {
     answer.innerHTML = 'Acertou!'
     scoreCount += 3
-    scoreCountRef.innerHTML = "Score: "+scoreCount  
+    scoreCountRef.innerHTML = scoreCount  
   } else {
     answer.innerHTML = 'Errou! Tente novamente!'
   }
