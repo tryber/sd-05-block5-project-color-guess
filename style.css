@@ -1,0 +1,18 @@
+header {
+  text-align: center;
+  font-size: 25px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.ball-container {
+  display: inline-block;
+}
+
+.ball {
+  border-radius: 50%;
+  border: black 1px solid;
+}
