@@ -19,7 +19,7 @@ const score = document.getElementById('score');
 let pontos = 0;
 
 reset.addEventListener('click',resetColors )
-window.onload(resetColors())
+window.onload = resetColors()
 
 function compareBallWithChosenRGB(event) {
   let colorOfClicked = event.target.style.backgroundColor;
