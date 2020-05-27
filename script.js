@@ -27,7 +27,6 @@ function pintarBolas() {
   for (let i = 0; i < 6; i += 1) {
     if (bolas[i].style.backgroundColor !== 'rgb' + cor) {
       ramdomColor();
-      console.log('rgb' + rGBColor);
       bolas[i].style.backgroundColor = 'rgb' + rGBColor;
     }
   }
@@ -46,6 +45,15 @@ function verificaClique(e) {
 
 }
 quadroBolas.addEventListener('click', verificaClique);
+
+// reinicia o jogo
+const botaoReiniciar = document.querySelector('button');
+function reiniciar() {
+  sorteiaCor();
+  pintarBolas();
+  document.getElementById('resposta').innerText = '';
+}
+botaoReiniciar.addEventListener('click', reiniciar);
 
 function initi() {
   sorteiaCor();
