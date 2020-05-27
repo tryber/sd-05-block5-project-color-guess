@@ -18,14 +18,13 @@ window.onload = function () {
     if (mainColor.innerHTML === colorSelected) {
       document.querySelector('.answer').innerHTML = 'Acertou!';
       // count the matches and add it to local storage
-      score = parseInt(localStorage.getItem('score')) + 3;
+      score = parseInt(localStorage.getItem('score'), 10) + 3;
       localStorage.setItem('score', score);
       document.querySelector('span').innerHTML = localStorage.getItem('score');
     } else {
       document.querySelector('.answer').innerHTML = 'Errou! Tente novamente!';
     }
   });
-  
 }
 
 // add random colors to the balls
@@ -35,11 +34,18 @@ for (let i = 0; i < buttons.length; i += 1) {
 }
 
 // add to the p.rgb-color element the background color of one of the balls
-let randomInteger = Math.floor((Math.random() * 5) + 1);
+const randomInteger = Math.floor((Math.random() * 5) + 1);
 mainColor.innerHTML = buttons[randomInteger].style.backgroundColor.replace('rgb', '');
 
 // button that reload the game
 const reloadButton = document.querySelector('.start-again');
 reloadButton.addEventListener('click', function () {
+  location.reload();
+});
+
+// button that make the score to be zero
+const zero = document.querySelector('.zero-button');
+zero.addEventListener('click', function () {
+  localStorage.setItem('score', 0);
   location.reload();
 });
