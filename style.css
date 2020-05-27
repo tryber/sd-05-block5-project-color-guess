@@ -1,0 +1,32 @@
+p , h1 {
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  padding: 30px;
+}
+
+ul {
+  padding-left: 0;
+  text-align: center;
+}
+
+.ball {
+  border-radius: 50%;
+  height: 120px;
+  padding: 30px;
+  width: 120px;
+}
+
+.answer {
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.zero {
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+}
