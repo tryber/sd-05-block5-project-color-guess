@@ -1,7 +1,7 @@
 let randomText = document.getElementById('rgb-color');
 let balls = document.getElementsByClassName('ball');
 let ballsLabel = document.getElementById('ball-content');
-let resetButton = document.getElementById('reset-button');
+let resetButton = document.getElementById('reset-game');
 let answer = document.getElementById('answer');
 let target = '';
 
