@@ -39,9 +39,9 @@ function verificaClique(e) {
   const corBolaClicada = getComputedStyle(e.target, null).getPropertyValue('background-color');
   const corIndicada = cor;
   if (corBolaClicada === corIndicada) {
-    document.getElementById('resposta').innerText = 'Correct!';
+    document.getElementById('answer').innerText = 'Acertou!';
   } else {
-    document.getElementById('resposta').innerText = 'Wrong answer! Guess again!';
+    document.getElementById('answer').innerText = 'Errou! Tente novamente!';
   }
 }
 quadroBolas.addEventListener('click', verificaClique);
@@ -51,7 +51,7 @@ const botaoReiniciar = document.querySelector('button');
 function reiniciar() {
   sorteiaCor();
   pintarBolas();
-  document.getElementById('resposta').innerText = '';
+  document.getElementById('answer').innerText = 'Escolha uma cor';
 }
 botaoReiniciar.addEventListener('click', reiniciar);
 
