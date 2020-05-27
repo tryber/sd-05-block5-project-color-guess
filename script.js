@@ -6,37 +6,35 @@ const reset = document.getElementById('reset-game');
 const score = document.getElementById('score');
 let pontos = 0;
 
+
+for (let i = 0; i < ballsContainer.length; i+= 1) {
+  ballsContainer[i].addEventListener('click', compareBallWithChosenRGB);
+}
+
 function compareBallWithChosenRGB(event) {
-  let colorOfClicked = event.target.style.backgroundColor;
+  const colorOfClicked = event.target.style.backgroundColor;
   if (colorOfClicked === rgbColor.innerHTML) {
     pontos += 3;
     score.innerHTML = `${pontos}`;
-    answer.innerHTML = `Acertou!`;
+    answer.innerHTML = 'Acertou!';
   } else {
     pontos -= 1;
     score.innerHTML = `${pontos}`;
-    answer.innerHTML = `Errou! Tente novamente!`;
+    answer.innerHTML = 'Errou! Tente novamente!';
   }
 }
 
 function getRandomRGB() {
-  let r = Math.ceil(Math.random() * 255);
-  let g = Math.ceil(Math.random() * 255);
-  let b = Math.ceil(Math.random() * 255);
+  const r = Math.ceil(Math.random() * 255);
+  const g = Math.ceil(Math.random() * 255);
+  const b = Math.ceil(Math.random() * 255);
   return `rgb(${r},${g},${b})`;
 }
 
-function resetColors() {
-  for (let i = 0; i < ballsContainer.length; i++) {
-    ballsContainer[i].style.backgroundColor = getRandomRGB();
-  }
-  let prizedBall;
-  selectPrizeBall();
-  getInnerRGB();
-  rgbColor.innerHTML = getInnerRGB();
-}
+let prizedBall;
+
 function selectPrizeBall() {
-  let prizedBallPosition = Math.floor(Math.random() * 6);
+  const prizedBallPosition = Math.floor(Math.random() * 6);
   prizedBall = ballsContainer[prizedBallPosition];
   return prizedBall;
 }
@@ -45,6 +43,17 @@ function getInnerRGB() {
   let innerRGB = prizedBall.style.backgroundColor;
   return innerRGB;
 }
+
+function resetColors() {
+  for (let i = 0; i < ballsContainer.length; i+= 1) {
+    ballsContainer[i].style.backgroundColor = getRandomRGB();
+  }
+  selectPrizeBall();
+  getInnerRGB();
+  rgbColor.innerHTML = getInnerRGB();
+}
+
+
 
 reset.addEventListener('click', resetColors);
 window.onload = resetColors();
