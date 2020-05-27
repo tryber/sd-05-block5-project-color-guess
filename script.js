@@ -8,15 +8,25 @@ function randomColor () {
 
 // add event listener to check whether the color of the clicked button matches the rgb color
 const balls = document.querySelector('.balls');
+let score = 0;
+localStorage.setItem('score', score);
 balls.addEventListener('click', function (event) {
   let colorSelected = event.target.style.backgroundColor.replace('rgb', '');
   if (mainColor.innerHTML === colorSelected) {
     document.querySelector('.answer').innerHTML = 'Acertou!';
+    // count the matches and add it to local storage
+    score += 3;
+    document.querySelector('span').innerHTML = localStorage.getItem('score');
   } else {
     document.querySelector('.answer').innerHTML = 'Errou! Tente novamente!';
   }
-
+  
+  document.querySelector('span').innerHTML = localStorage.getItem('score');
 });
+
+window.onload = function () {
+  score = localStorage.getItem('score');
+}
 
 // add random colors to the balls
 const buttons = document.getElementsByClassName('ball');
@@ -34,3 +44,5 @@ const reloadButton = document.querySelector('.start-again');
 reloadButton.addEventListener('click', function () {
   location.reload();
 });
+
+// create score
