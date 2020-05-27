@@ -30,7 +30,7 @@ window.onload = function () {
 // add random colors to the balls
 const buttons = document.getElementsByClassName('ball');
 for (let i = 0; i < buttons.length; i += 1) {
-  buttons[i].style.backgroundColor = concat('rgb', randomColor());
+  buttons[i].style.backgroundColor = 'rgb'.concat(randomColor());
 }
 
 // add to the p.rgb-color element the background color of one of the balls
