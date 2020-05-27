@@ -42,7 +42,7 @@ function verificaClique(e) {
   if (corBolaClicada === corIndicada) {
     document.getElementById('answer').innerText = 'Acertou!';
     score += 3;
-    document.getElementById('score').innerText = score;
+    document.getElementById('score').innerText = `${score}`;
   } else {
     document.getElementById('answer').innerText = 'Errou! Tente novamente!';
   }
@@ -61,5 +61,6 @@ botaoReiniciar.addEventListener('click', reiniciar);
 function initi() {
   sorteiaCor();
   pintarBolas();
+  document.getElementById('score').innerText = 0;
 }
 window.onload = initi;
