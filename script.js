@@ -17,17 +17,18 @@ function sorteiaCor() {
   ramdomColor();
   cor = rGBColor;
   document.getElementById('rgb-color').innerText = cor;
+  cor = `rgb${cor}`;
   const bola = Math.floor(Math.random() * 6);
-  document.querySelectorAll('.ball')[bola].style.backgroundColor = `rgb ${cor}`;
+  document.querySelectorAll('.ball')[bola].style.backgroundColor = cor;
 }
 
 // função para pintar as outras bolas
 function pintarBolas() {
   const bolas = document.getElementsByClassName('ball');
   for (let i = 0; i < 6; i += 1) {
-    if (bolas[i].style.backgroundColor !== `rgb ${cor}`) {
+    if (bolas[i].style.backgroundColor !== cor) {
       ramdomColor();
-      bolas[i].style.backgroundColor = `rgb ${rGBColor}`;
+      bolas[i].style.backgroundColor = `rgb${rGBColor}`;
     }
   }
 }
@@ -36,7 +37,7 @@ function pintarBolas() {
 const quadroBolas = document.querySelector('.quadro-bolas');
 function verificaClique(e) {
   const corBolaClicada = getComputedStyle(e.target, null).getPropertyValue('background-color');
-  const corIndicada = `rgb ${cor}`;
+  const corIndicada = cor;
   if (corBolaClicada === corIndicada) {
     document.getElementById('resposta').innerText = 'Correct!';
   } else {
