@@ -1,0 +1,12 @@
+.ball {
+  background-color: grey;
+  border-radius: 50%;
+  display: inline-block;
+  height: 70px;
+  margin: 1%;
+  width: 70px;
+}
+
+body {
+    text-align: center;
+}
