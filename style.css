@@ -8,13 +8,13 @@ li {
 }
 
 ul {
-  text-align: center;
   padding-left: 0;
+  text-align: center;
 }
 
 button {
-  width: 120px;
-  height: 120px;
   border-radius: 50%;
+  height: 120px;
   padding: 30px;
+  width: 120px;
 }
