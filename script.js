@@ -16,6 +16,22 @@ const ballsContainer = document.getElementsByClassName('balls-container')[0]
 const answer = document.getElementById('answer');
 const reset = document.getElementById('reset');
 const score = document.getElementById('score');
+let pontos = 0;
+
+function compareBallWithChosenRGB(event) {
+  let colorOfClicked = event.target.style.backgroundColor;
+  if(colorOfClicked === rgbColor.innerHTML) {
+      pontos += 3;
+      score.innerHTML = `Score: ${pontos}`
+      answer.innerHTML = `Acertou!`
+  } else {
+      pontos -= 1;
+      score.innerHTML = `Score: ${pontos}`
+      answer.innerHTML = `Errou! Tente novamente!`      
+  }
+
+  
+}
 
 function getRandomRGB() {
   let r = Math.ceil(Math.random() * 255);
@@ -37,13 +53,12 @@ function selectPrizeBall() {
 }
 prizedBall = selectPrizeBall();
 
-
 function getInnerRGB() {
-    let innerRGB = prizedBall.style.backgroundColor;
-    // console.log(innerRGB)
-    return innerRGB;
+  let innerRGB = prizedBall.style.backgroundColor;
+  // console.log(innerRGB)
+  return innerRGB;
 }
 
-rgbColor.innerHTML = getInnerRGB()
+rgbColor.innerHTML = getInnerRGB();
 
 // console.log(prizedBall);
