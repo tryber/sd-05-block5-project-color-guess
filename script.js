@@ -35,11 +35,14 @@ function pintarBolas() {
 
 // verifica se a bola clicada corresponde à cor mostrada
 const quadroBolas = document.querySelector('.quadro-bolas');
+let score = 0;
 function verificaClique(e) {
   const corBolaClicada = getComputedStyle(e.target, null).getPropertyValue('background-color');
   const corIndicada = cor;
   if (corBolaClicada === corIndicada) {
     document.getElementById('answer').innerText = 'Acertou!';
+    score += 3;
+    document.getElementById('score').innerText = score;
   } else {
     document.getElementById('answer').innerText = 'Errou! Tente novamente!';
   }
