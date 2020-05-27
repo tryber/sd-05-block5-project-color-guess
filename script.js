@@ -33,6 +33,20 @@ function pintarBolas() {
   }
 }
 
+// verifica se a bola clicada corresponde à cor mostrada
+const quadroBolas = document.querySelector('.quadro-bolas');
+function verificaClique(e) {
+  const corBolaClicada = getComputedStyle(e.target, null).getPropertyValue('background-color');
+  const corIndicada = 'rgb' + cor;
+  if (corBolaClicada === corIndicada) {
+    document.getElementById('resposta').innerText = 'Correct!';
+  } else {
+    document.getElementById('resposta').innerText = 'Wrong answer! Guess again!';
+  }
+
+}
+quadroBolas.addEventListener('click', verificaClique);
+
 function initi() {
   sorteiaCor();
   pintarBolas();
