@@ -36,7 +36,7 @@ function answerText() {
   if (target.style.backgroundColor === "rgb" + randomText.innerHTML) {
     answer.innerHTML = "Acertou!";
     scoreCount += 3;
-    scoreCountLabel.innerHTML = `Score: ${scoreCount}`;
+    scoreCountLabel.innerHTML = scoreCount;
   } else {
     answer.innerHTML = "Errou! Tente novamente!";
   }
