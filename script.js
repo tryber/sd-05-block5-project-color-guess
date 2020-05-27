@@ -6,11 +6,6 @@ const reset = document.getElementById('reset-game');
 const score = document.getElementById('score');
 let pontos = 0;
 
-
-for (let i = 0; i < ballsContainer.length; i+= 1) {
-  ballsContainer[i].addEventListener('click', compareBallWithChosenRGB);
-}
-
 function compareBallWithChosenRGB(event) {
   const colorOfClicked = event.target.style.backgroundColor;
   if (colorOfClicked === rgbColor.innerHTML) {
@@ -22,6 +17,10 @@ function compareBallWithChosenRGB(event) {
     score.innerHTML = `${pontos}`;
     answer.innerHTML = 'Errou! Tente novamente!';
   }
+}
+
+for (let i = 0; i < ballsContainer.length; i += 1) {
+  ballsContainer[i].addEventListener('click', compareBallWithChosenRGB);
 }
 
 function getRandomRGB() {
@@ -40,20 +39,18 @@ function selectPrizeBall() {
 }
 
 function getInnerRGB() {
-  let innerRGB = prizedBall.style.backgroundColor;
+  const innerRGB = prizedBall.style.backgroundColor;
   return innerRGB;
 }
 
 function resetColors() {
-  for (let i = 0; i < ballsContainer.length; i+= 1) {
+  for (let i = 0; i < ballsContainer.length; i += 1) {
     ballsContainer[i].style.backgroundColor = getRandomRGB();
   }
   selectPrizeBall();
   getInnerRGB();
   rgbColor.innerHTML = getInnerRGB();
 }
-
-
 
 reset.addEventListener('click', resetColors);
 window.onload = resetColors();
