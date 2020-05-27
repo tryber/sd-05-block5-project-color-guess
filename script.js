@@ -23,7 +23,7 @@ function randomBallsColor(){
     balls[i].style.backgroundColor = `rgb(${randomColor()})`;    
   }
   randomText.innerHTML = balls[random].style.backgroundColor.replace('rgb', '');
-  answer.innerHTML = '';
+  answer.innerHTML = 'Escolha uma cor';
 }
 
 function answerText() {
