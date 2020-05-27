@@ -1,0 +1,38 @@
+header {
+  margin: 20px;
+  text-align: center;
+}
+
+.rgb-color {
+  margin: auto;
+  text-align: center;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  height: 30px;
+  margin: 5px;
+  width: 30px;
+
+}
+
+.quadro-bolas , .centralizado {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 10px 30px;
+}
+
+button {
+  display: inline-block;
+}
+
+.resposta {
+  padding: 10px;
+  text-align: center;
+}
