@@ -1,0 +1,29 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#ball-content {
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+}
+
+.ball {
+  border: 1px solid #ccc;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  float: left;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-bottom: 20px;
+  line-height: 100px;
+}
+
+.ball:last-child {
+  margin-right: 0;
+}
