@@ -18,19 +18,20 @@ const reset = document.getElementById('reset');
 const score = document.getElementById('score');
 let pontos = 0;
 
+reset.addEventListener('click',resetColors )
+window.onload(resetColors())
+
 function compareBallWithChosenRGB(event) {
   let colorOfClicked = event.target.style.backgroundColor;
-  if(colorOfClicked === rgbColor.innerHTML) {
-      pontos += 3;
-      score.innerHTML = `Score: ${pontos}`
-      answer.innerHTML = `Acertou!`
+  if (colorOfClicked === rgbColor.innerHTML) {
+    pontos += 3;
+    score.innerHTML = `${pontos}`;
+    answer.innerHTML = `Acertou!`;
   } else {
-      pontos -= 1;
-      score.innerHTML = `Score: ${pontos}`
-      answer.innerHTML = `Errou! Tente novamente!`      
+    pontos -= 1;
+    score.innerHTML = `${pontos}`;
+    answer.innerHTML = `Errou! Tente novamente!`;
   }
-
-  
 }
 
 function getRandomRGB() {
@@ -40,25 +41,31 @@ function getRandomRGB() {
   return `rgb(${r},${g},${b})`;
 }
 
+function resetColors() {
 for (let i = 0; i < ballsContainer.length; i++) {
   ballsContainer[i].style.backgroundColor = getRandomRGB();
 }
-
 let prizedBall;
+selectPrizeBall()
+getInnerRGB()
+rgbColor.innerHTML = getInnerRGB();
+
+}
+
+// //Variável que guarda a bola que será a ganhadora
+// let prizedBall;
 
 function selectPrizeBall() {
   let prizedBallPosition = Math.floor(Math.random() * 6);
   prizedBall = ballsContainer[prizedBallPosition];
   return prizedBall;
 }
-prizedBall = selectPrizeBall();
 
 function getInnerRGB() {
   let innerRGB = prizedBall.style.backgroundColor;
-  // console.log(innerRGB)
+  
   return innerRGB;
 }
 
-rgbColor.innerHTML = getInnerRGB();
 
-// console.log(prizedBall);
+
