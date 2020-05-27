@@ -6,14 +6,10 @@ function randomColor() {
   return `(${r}, ${g}, ${b})`;
 }
 
-// add to the p.rgb-color element the background color of one of the balls
-let randomInteger = Math.floor((Math.random() * 5)  + 1);
-const mainColor = document.querySelector('.rgb-color');
-mainColor.innerHTML = buttons[randomInteger].style.backgroundColor.replace('rgb', '');
-
 // add event listener to check whether the color of the clicked button matches the rgb color
 const balls = document.querySelector('.balls');
 let score = 0;
+const mainColor = document.querySelector('.rgb-color');
 
 window.onload = function () {
   document.querySelector('span').innerHTML = localStorage.getItem('score');
@@ -38,10 +34,12 @@ for (let i = 0; i < buttons.length; i += 1) {
   buttons[i].style.backgroundColor = 'rgb' + randomColor();
 }
 
+// add to the p.rgb-color element the background color of one of the balls
+let randomInteger = Math.floor((Math.random() * 5) + 1);
+mainColor.innerHTML = buttons[randomInteger].style.backgroundColor.replace('rgb', '');
+
 // button that reload the game
 const reloadButton = document.querySelector('.start-again');
 reloadButton.addEventListener('click', function () {
   location.reload();
 });
-
-// create score
