@@ -19,8 +19,8 @@ header {
 }
 
 .quadro-bolas , .centralizado {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
@@ -33,6 +33,6 @@ button {
 }
 
 .resposta {
-  text-align: center;
   padding: 10px;
+  text-align: center;
 }
