@@ -1,5 +1,3 @@
-//let cor_sorteada = []
-
 function gerar_RGB() {
   let cor_sorteada = document.getElementsByClassName('ball')[Math.floor(Math.random() * 6)].style.backgroundColor.substr(3);
 
@@ -25,10 +23,9 @@ function startForm() {
     "circulo_5",
     "circulo_6"]
   for (let i = 0; i < 6; i++) {
-    let rand = this.Math.floor(this.Math.random() * (6 - i))
+    let rand = this.Math.floor(this.Math.random() * (6 - i));
     preecher(balas_id[rand], cor(), cor(), cor());
     balas_id.splice(rand, 1);
-    //console.log(balas_id)
   }
   gerar_RGB();
 }

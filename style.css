@@ -1,13 +1,26 @@
-.centralizar{
+.centralizar {
   text-align: center;
 }
-#rgb-color{
+
+.rgb-color {
   text-align: center;
 }
-.ball{
-  width: 100px;
-  height: 100px;
+
+.ball {
   border-style: solid;
   border-radius: 100%;
   display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+.formatarTexto{
+  font-size: 3em;
+  text-align: center;
+}
+
+.centralButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
