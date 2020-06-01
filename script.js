@@ -29,11 +29,6 @@ function criaBolas() {
   }
 }
 
-criaBolas();
-textoRGBrandomico();
-const posPlacar = document.getElementById('score');
-posPlacar.innerText = placar;
-
 function textoRGBrandomico() {
   const escolha = Math.floor(Math.random() * 6);
   const posTextoRGB = document.getElementById('rgb-color');
@@ -41,6 +36,11 @@ function textoRGBrandomico() {
   posTextoRGB.innerHTML = vetorRgbs[escolha];
   comparaCor = vetorRgbs[escolha];
 }
+
+criaBolas();
+textoRGBrandomico();
+const posPlacar = document.getElementById('score');
+posPlacar.innerText = placar;
 
 const bolas = document.getElementById('aquiTemBolas').childNodes;
 
@@ -50,7 +50,6 @@ function verificaAcerto(element) {
   if (element.target.style.backgroundColor === comparaCor) {
     pegaPosicaoAlerta.innerHTML = 'Acertou!';
     placar += 3;
-    console.log(posPlacar)
     posPlacar.innerText = '';
     posPlacar.innerText = placar;
   } else {
