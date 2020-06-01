@@ -1,6 +1,7 @@
 let r,g,b;
 let vetorRgbs = [];
 let comparaCor = '';
+let placar = 0;
 
 function criaBolas() {
   let posicaoBolas = document.getElementById('aquiTemBolas');
@@ -28,6 +29,8 @@ function criaBolas() {
 
 criaBolas();
 textoRGBrandomico();
+const posPlacar = document.getElementById('score');
+posPlacar.innerText = placar;
 
 function textoRGBrandomico() {
   const escolha = Math.floor(Math.random()*6);
@@ -41,9 +44,14 @@ const bolas = document.getElementById('aquiTemBolas').childNodes;
 
 function verificaAcerto(element) {
   const pegaPosicaoAlerta = document.getElementById('answer');
+  const posPlacar = document.getElementById('score');
   pegaPosicaoAlerta.innerHTML = '';
   if (element.target.style.backgroundColor === comparaCor) {
     pegaPosicaoAlerta.innerHTML = 'Acertou!';
+    placar += 3;
+    console.log(posPlacar)
+    posPlacar.innerText = '';
+    posPlacar.innerText = placar;
   } else {
     pegaPosicaoAlerta.innerHTML = 'Errou! Tente novamente!';
   }
