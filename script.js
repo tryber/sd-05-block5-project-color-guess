@@ -1,10 +1,12 @@
-let r,g,b;
+let r;
+let g;
+let b;
 let vetorRgbs = [];
 let comparaCor = '';
 let placar = 0;
 
 function criaBolas() {
-  let posicaoBolas = document.getElementById('aquiTemBolas');
+  const posicaoBolas = document.getElementById('aquiTemBolas');
   posicaoBolas.innerHTML = '';
 
   if (vetorRgbs.length !== 0) {
@@ -15,12 +17,12 @@ function criaBolas() {
     r = '';
     g = '';
     b = '';
-    r = Math.floor(Math.random()*256);
-    g = Math.floor(Math.random()*256);
-    b = Math.floor(Math.random()*256);
+    r = Math.floor(Math.random() * 256);
+    g = Math.floor(Math.random() * 256);
+    b = Math.floor(Math.random() * 256);
     const criaDiv = document.createElement('div');
     criaDiv.className = 'ball';
-    let corRandomica = 'rgb(' + r + "," + ' ' + g + "," + ' ' + b + ')';
+    const corRandomica = 'rgb(' + r + "," + ' ' + g + "," + ' ' + b + ')';
     vetorRgbs.push(corRandomica);
     criaDiv.style.backgroundColor = corRandomica;
     posicaoBolas.append(criaDiv);
@@ -33,7 +35,7 @@ const posPlacar = document.getElementById('score');
 posPlacar.innerText = placar;
 
 function textoRGBrandomico() {
-  const escolha = Math.floor(Math.random()*6);
+  const escolha = Math.floor(Math.random() * 6);
   const posTextoRGB = document.getElementById('rgb-color');
   posTextoRGB.innerHTML = '';
   posTextoRGB.innerHTML = vetorRgbs[escolha];
@@ -44,7 +46,6 @@ const bolas = document.getElementById('aquiTemBolas').childNodes;
 
 function verificaAcerto(element) {
   const pegaPosicaoAlerta = document.getElementById('answer');
-  const posPlacar = document.getElementById('score');
   pegaPosicaoAlerta.innerHTML = '';
   if (element.target.style.backgroundColor === comparaCor) {
     pegaPosicaoAlerta.innerHTML = 'Acertou!';
