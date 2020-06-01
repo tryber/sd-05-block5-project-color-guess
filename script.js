@@ -63,5 +63,5 @@ function reiniciaTudo() {
   });
 }
 
-const posicaoBotao = document.getElementById('reiniciar');
+const posicaoBotao = document.getElementById('reset-game');
 posicaoBotao.addEventListener('click', reiniciaTudo);
