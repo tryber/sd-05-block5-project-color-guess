@@ -13,12 +13,12 @@ function randomRGB() {
 
 function resetColors() {
   const randomBall = Math.floor(Math.random() * 6);
-  Array.from(balls).forEach(ball => {
+  Array.from(balls).forEach((ball) => {
     ball.style.backgroundColor = `rgb${randomRGB()}`;
   });
   rgbInput.innerHTML = balls[randomBall].style.backgroundColor.replace(
     'rgb',
-    ''
+    '',
   );
   answer.innerHTML = 'Qual a cor equivalente ao RGB?';
 }
@@ -26,13 +26,13 @@ function resetColors() {
 function gameAnswer(event) {
   const chosenColor = event.target;
   if (chosenColor.style.backgroundColor === (`rgb${rgbInput.innerHTML}`)) {
-    answer.innerHTML = "Acertou!";
+    answer.innerHTML = 'Acertou!';
     score.innerHTML = parseFloat(score.innerHTML) + 3;
     setTimeout((() => {
       resetColors();
     }), 1000);
   } else {
-    answer.innerHTML = "Errou! Tente novamente!";
+    answer.innerHTML = 'Errou! Tente novamente!';
   }
 }
 
@@ -45,6 +45,6 @@ restart.addEventListener('click', () => {
 
 /* On Load Actions */
 window.onload = resetColors();
-window.onload = function() {
+window.onload = function () {
   score.innerHTML = 0;
-}
+};
