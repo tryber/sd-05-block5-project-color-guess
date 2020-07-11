@@ -1,7 +1,7 @@
 const rgbInput = document.getElementById('rgb-color');
 const balls = document.querySelectorAll('.ball');
 const answer = document.getElementById('answer');
-const restart = document.getElementById('restart');
+const restart = document.getElementById('reset-game');
 const score = document.getElementById('score');
 
 function randomRGB() {
@@ -20,7 +20,7 @@ function resetColors() {
     'rgb',
     '',
   );
-  answer.innerHTML = 'Qual a cor equivalente ao RGB?';
+  answer.innerHTML = 'Escolha uma cor';
 }
 
 function gameAnswer(event) {
