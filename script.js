@@ -38,10 +38,7 @@ function gameAnswer(event) {
 
 /* Event Listeners */
 Array.from(balls).forEach((ball) => ball.addEventListener('click', gameAnswer));
-restart.addEventListener('click', () => {
-  score.innerHTML = 0;
-  resetColors();
-});
+restart.addEventListener('click', resetColors);
 
 /* On Load Actions */
 window.onload = resetColors();
