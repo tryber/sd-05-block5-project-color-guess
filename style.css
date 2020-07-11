@@ -1,0 +1,17 @@
+header {
+  text-align: center;
+}
+
+.color-balls {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 80%;
+}
+
+.ball {
+  border: 2px black solid;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
