@@ -37,7 +37,7 @@ function gameAnswer(event) {
 }
 
 /* Event Listeners */
-Array.from(balls).forEach(ball => ball.addEventListener('click', gameAnswer));
+Array.from(balls).forEach((ball) => ball.addEventListener('click', gameAnswer));
 restart.addEventListener('click', () => {
   score.innerHTML = 0;
   resetColors();
